@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useCallback } from 'react';
+import Keypad from './components/Keypad';
+import Header from './components/Header';
 import './App.css';
 
+const MemoizedKeypad = React.memo(Keypad);
+
 function App() {
+  const [input, setInput] = useState('');
+
+  const handleClick = useCallback((value) => {
+    setInput(input + value);
+  }, [input]);
+
+  const handleEqual = useCallback(() => {
+    setInput(eval(input).toString());
+  }, [input]);
+
+  const handleClear = useCallback(() => {
+    setInput('');
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='calculator'>
+        <Header/>
+        <input className='display' type='text' value={input} />
+        <MemoizedKeypad handleClear={handleClear} handleClick={handleClick} handleEqual={handleEqual} />
+      </div>
     </div>
   );
 }

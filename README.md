@@ -1,15 +1,15 @@
-React Calculator
+React Calculator:
 The React Calculator is a simple web application that provides basic arithmetic operations. This calculator was built using ReactJS, a popular JavaScript library for building user interfaces.
 
-Features
+Features:
 Addition, subtraction, multiplication, and division operations
 Clear button to reset the calculator
 Support for keyboard input
 
-Usage
+Usage:
 To use the React Calculator, simply enter the first number using the on-screen number pad or your keyboard, then select the desired operation (+, -, x, ÷) and enter the second number. The result will be displayed on the screen. You can also use the clear button to reset the calculator, or the history button to view and clear your calculation history.
 
-Installation
+Installation:
 To run the React Calculator, follow these steps:
 
 Clone the repository: git clone https://github.com/juanc3719/jc-calculator.git
